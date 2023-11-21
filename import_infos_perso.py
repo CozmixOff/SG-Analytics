@@ -1,6 +1,5 @@
 
 import csv
-
 vagues = []
 genres = []
 ages = []
@@ -31,57 +30,61 @@ listekey = ["vagues", "genres", "ages", "zone geos", "regions", "departements", 
 listevalue = [vagues, genres, ages, zone_geos, regions, departements, taille_commune1s, taille_commune2s, situ_pros, CSPs]
 info_perso = {listekey[i]: listevalue[i] for i in range(len(listekey))}
 
-typevalue_vagues = []
-for i in range(len(vagues)):
-    if vagues[i] not in typevalue_vagues:
-        typevalue_vagues.append(vagues[i])
+def info_personne(n):
+    pers = {}
+    for i in info_perso:
+        pers[i] = info_perso[i][n]
+    return pers
+def personne(n):
+    personne = reponse_personne(n)
+    personne['personnel'] = info_personne(n)
+    personne['couleur_moyenne'] = couleur_moyenne(personne)
+    return personne
 
-typevalue_genres = []
-for i in range(len(genres)):
-    if (genres[i]) not in typevalue_genres:
-        typevalue_genres.append(genres[i])
-
-typevalue_ages = []
-for i in range(len(ages)):
-    if (ages[i]) not in typevalue_ages:
-        typevalue_ages.append(ages[i])
-
-typevalue_zone_geos = []
-for i in range(len(zone_geos)):
-    if (zone_geos[i]) not in typevalue_zone_geos:
-        typevalue_zone_geos.append(zone_geos[i])
-
-typevalue_regions = []
-for i in range(len(regions)):
-    if (regions[i]) not in typevalue_regions:
-        typevalue_regions.append(regions[i])
-
-typevalue_departements = []
-for i in range(len(departements)):
-    if (departements[i]) not in typevalue_departements:
-        typevalue_departements.append(departements[i])
-
-typevalue_taille_commune1s = []
-for i in range(len(taille_commune1s)):
-    if (taille_commune1s[i]) not in typevalue_taille_commune1s:
-        typevalue_taille_commune1s.append(taille_commune1s[i])
-
-typevalue_taille_commune2s = []
-for i in range(len(taille_commune2s)):
-    if (taille_commune2s[i]) not in typevalue_taille_commune2s:
-        typevalue_taille_commune2s.append(taille_commune2s[i])
-
-typevalue_situ_pros = []
-for i in range(len(situ_pros)):
-    if (situ_pros[i]) not in typevalue_situ_pros:
-        typevalue_situ_pros.append(situ_pros[i])
-
-typevalue_CSPs = []
-for i in range(len(CSPs)):
-    if (CSPs[i]) not in typevalue_CSPs:
-        typevalue_CSPs.append(CSPs[i])
+def typeur (L):
+    typevalue_L = []
+    for i in range(len(L)):
+        if L[i] not in typevalue_L:
+            typevalue_L.append(L[i])
+    return typevalue_L
 
 def transformateur (L):
-    code = []
-        
+    typevalue_L = typeur(L)
+    transfo_L = []
+    for i in L: 
+        x = typevalue_L.index(i)
+        transfo_L.append(x)
+    return transfo_L
 
+"""
+typevalue_vagues = typeur(vagues)
+typevalue_genres = typeur(genres)
+typevalue_ages = typeur(ages)
+typevalue_zone_geos = typeur(zone_geos)
+typevalue_regions = typeur(regions)
+typevalue_departements = typeur(departements)
+typevalue_taille_commune1s = typeur(taille_commune1s)
+typevalue_taille_commune2s = typeur(taille_commune2s)
+typevalue_situ_pros = typeur(situ_pros)
+typevalue_CSPs = typeur(CSPs)
+
+
+
+transfo_vagues = transformateur(vagues)
+transfo_genres = transformateur(genres)
+transfo_ages = transformateur(ages)
+transfo_zone_geos = transformateur(zone_geos)
+transfo_regions = transformateur(regions)
+transfo_departements = transformateur(departements)
+transfo_taille_commune1s = transformateur(taille_commune1s)
+transfo_taille_commune2s = transformateur(taille_commune2s)
+transfo_situ_pros = transformateur(situ_pros)
+transfo_CSPs = transformateur(CSPs)
+
+"""
+def reponse_personne(n):
+    dictio = {}
+    return dictio
+def couleur_moyenne(reponse_personne):
+    dico = {}
+    return dico
