@@ -35,6 +35,7 @@ def info_personne(n):
     for i in info_perso:
         pers[i] = info_perso[i][n]
     return pers
+
 def personne(n):
     personne = reponse_personne(n)
     personne['personnel'] = info_personne(n)
@@ -56,7 +57,7 @@ def transformateur (L):
         transfo_L.append(x)
     return transfo_L
 
-"""
+
 typevalue_vagues = typeur(vagues)
 typevalue_genres = typeur(genres)
 typevalue_ages = typeur(ages)
@@ -67,7 +68,7 @@ typevalue_taille_commune1s = typeur(taille_commune1s)
 typevalue_taille_commune2s = typeur(taille_commune2s)
 typevalue_situ_pros = typeur(situ_pros)
 typevalue_CSPs = typeur(CSPs)
-
+"""
 
 
 transfo_vagues = transformateur(vagues)
@@ -88,3 +89,6 @@ def reponse_personne(n):
 def couleur_moyenne(reponse_personne):
     dico = {}
     return dico
+
+print (typevalue_vagues)
+print (transformateur(typevalue_vagues))

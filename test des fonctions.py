@@ -16,7 +16,5 @@ def transformateur (L):
     
     return transfo_L
 
-liste = list([random.randint(0,100) for i in range(10000)])
-
-dico = dict(i = 0)
-print(dico)
+liste = list([random.randint(0,100) for i in range(500)])
+print(typeur(liste).sort())
